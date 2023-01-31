@@ -5,8 +5,8 @@
     {
       "type": "default",
       "project": "CMakeLists.txt",
-      "projectTarget": "Julius.exe",
-      "name": "Julius.exe",
+      "projectTarget": "Gillard.exe",
+      "name": "Gillard.exe",
       "args": [
         "R",
         "README.txt"
