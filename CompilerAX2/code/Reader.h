@@ -125,29 +125,29 @@ typedef struct bufferReader {
 
 /* FUNCTIONS DECLARATION:  .................................. */
 /* General Operations */
-ReaderPointer	readerCreate		(julius_intg, julius_intg, julius_intg);
-ReaderPointer	readerAddChar		(ReaderPointer const, julius_char);
-julius_boln		readerClear		    (ReaderPointer const);
-julius_boln		readerFree		    (ReaderPointer const);
-julius_boln		readerIsFull		(ReaderPointer const);
-julius_boln		readerIsEmpty		(ReaderPointer const);
-julius_boln		readerSetMark		(ReaderPointer const, julius_intg);
-julius_intg		readerPrint		    (ReaderPointer const);
-julius_intg		readerLoad			(ReaderPointer const, FILE* const);
-julius_boln		readerRecover		(ReaderPointer const);
-julius_boln		readerRetract		(ReaderPointer const);
-julius_boln		readerRestore		(ReaderPointer const);
+ReaderPointer	readerCreate		(gillard_intg, gillard_intg, gillard_intg);
+ReaderPointer	readerAddChar		(ReaderPointer const, gillard_char);
+gillard_boln		readerClear		    (ReaderPointer const);
+gillard_boln		readerFree		    (ReaderPointer const);
+gillard_boln		readerIsFull		(ReaderPointer const);
+gillard_boln		readerIsEmpty		(ReaderPointer const);
+gillard_boln		readerSetMark		(ReaderPointer const, gillard_intg);
+gillard_intg		readerPrint		    (ReaderPointer const);
+gillard_intg		readerLoad			(ReaderPointer const, FILE* const);
+gillard_boln		readerRecover		(ReaderPointer const);
+gillard_boln		readerRetract		(ReaderPointer const);
+gillard_boln		readerRestore		(ReaderPointer const);
 /* Getters */
-julius_char		readerGetChar		(ReaderPointer const);
-julius_char*	readerGetContent	(ReaderPointer const, julius_intg);
-julius_intg		readerGetPosRead	(ReaderPointer const);
-julius_intg		readerGetPosWrte	(ReaderPointer const);
-julius_intg		readerGetPosMark	(ReaderPointer const);
-julius_intg		readerGetSize		(ReaderPointer const);
-julius_intg		readerGetInc		(ReaderPointer const);
-julius_intg		readerGetMode		(ReaderPointer const);
-julius_byte		readerGetFlags		(ReaderPointer const);
-julius_intg		readerShowStat		(ReaderPointer const);
-julius_intg		readerNumErrors		(ReaderPointer const);
+gillard_char		readerGetChar		(ReaderPointer const);
+gillard_char*	readerGetContent	(ReaderPointer const, gillard_intg);
+gillard_intg		readerGetPosRead	(ReaderPointer const);
+gillard_intg		readerGetPosWrte	(ReaderPointer const);
+gillard_intg		readerGetPosMark	(ReaderPointer const);
+gillard_intg		readerGetSize		(ReaderPointer const);
+gillard_intg		readerGetInc		(ReaderPointer const);
+gillard_intg		readerGetMode		(ReaderPointer const);
+gillard_byte		readerGetFlags		(ReaderPointer const);
+gillard_intg		readerShowStat		(ReaderPointer const);
+gillard_intg		readerNumErrors		(ReaderPointer const);
 
 #endif
