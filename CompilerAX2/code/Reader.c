@@ -102,6 +102,7 @@ ReaderPointer readerCreate(gillard_intg size, gillard_intg increment, gillard_in
 	readerPointer->mode = mode;
 	/* TO_DO: Initialize flags */
 	/* TO_DO: The created flag must be signalized as EMP */
+	readerPointer->flags = READER_EMPTY_FLAG;
 	return readerPointer;
 }
 
@@ -215,6 +216,14 @@ gillard_boln readerFree(ReaderPointer const readerPointer) {
 gillard_boln readerIsFull(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Check flag if buffer is FUL */
+
+	if(!readerPointer){
+		return GILLARD_FALSE;
+	}
+
+	if(readerPointer->flags == READER_FULL_FLAG){
+		return GILLARD_TRUE;
+	}
 	return GILLARD_FALSE;
 }
 
@@ -236,6 +245,13 @@ gillard_boln readerIsFull(ReaderPointer const readerPointer) {
 gillard_boln readerIsEmpty(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Check flag if buffer is EMP */
+	if(!readerPointer){
+		return GILLARD_FALSE;
+	}
+
+	if(readerPointer->flags == READER_EMPTY_FLAG){
+		return GILLARD_TRUE;
+	}
 	return GILLARD_FALSE;
 }
 
