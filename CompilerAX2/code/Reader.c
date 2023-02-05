@@ -469,7 +469,11 @@ gillard_char* readerGetContent(ReaderPointer const readerPointer, gillard_intg p
 gillard_intg readerGetPosRead(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return read */
-	return 0;
+	if(readerPointer == NULL){
+		return 0;
+	}
+	
+	return readerPointer->position.read;
 }
 
 
@@ -490,7 +494,11 @@ gillard_intg readerGetPosRead(ReaderPointer const readerPointer) {
 gillard_intg readerGetPosWrte(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return wrte */
-	return 0;
+	if(readerPointer == NULL){
+		return 0;
+	}
+	
+	return readerPointer->position.wrte;
 }
 
 
@@ -511,7 +519,11 @@ gillard_intg readerGetPosWrte(ReaderPointer const readerPointer) {
 gillard_intg readerGetPosMark(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return mark */
-	return 0;
+	if(readerPointer == NULL){
+		return 0;
+	}
+	
+	return readerPointer->position.mark;
 }
 
 
@@ -532,7 +544,11 @@ gillard_intg readerGetPosMark(ReaderPointer const readerPointer) {
 gillard_intg readerGetSize(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return size */
-	return 0;
+	if(readerPointer == NULL){
+		return 0;
+	}
+	
+	return readerPointer->size;
 }
 
 /*
@@ -552,7 +568,12 @@ gillard_intg readerGetSize(ReaderPointer const readerPointer) {
 gillard_intg readerGetInc(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return increment */
-	return 0;
+	if(readerPointer == NULL){
+		return 0;
+	}
+	
+	return readerPointer->increment;
+	
 }
 
 /*
@@ -572,7 +593,12 @@ gillard_intg readerGetInc(ReaderPointer const readerPointer) {
 gillard_intg readerGetMode(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return mode */
-	return 0;
+	if(readerPointer == NULL){
+		return 0;
+	}
+	
+	return readerPointer->mode;
+	
 }
 
 
@@ -593,7 +619,13 @@ gillard_intg readerGetMode(ReaderPointer const readerPointer) {
 gillard_byte readerGetFlags(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return flags */
-	return 0;
+
+	if(readerPointer == NULL){
+		return 0;
+	}
+	
+	return readerPointer->flags;
+	
 }
 
 
