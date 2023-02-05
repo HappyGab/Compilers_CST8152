@@ -38,7 +38,7 @@
 ************************************************************
 * File name: Compilers.h
 * Compiler: MS Visual Studio 2022
-* Course: CST 8152 – Compilers, Lab Section: [011, 012, 013]
+* Course: CST 8152 ï¿½ Compilers, Lab Section: [011, 012, 013]
 * Assignment: A12, A22, A32.
 * Date: Jan 01 2023
 * Professor: Paulo Sousa
@@ -62,8 +62,8 @@
  */
  
 /* Logical constants - adapt for your language */
-#define JULIUS_TRUE  1
-#define JULIUS_FALSE 0
+#define GILLARD_TRUE  1
+#define GILLARD_FALSE 0
 
 /*
 ------------------------------------------------------------
@@ -74,16 +74,16 @@ NOTE: Some types may not be directly used by your language,
 */
 
 /* TO_DO: Define your typedefs */
-typedef void			julius_void;
-typedef char			julius_char;
-typedef int				julius_intg;
-typedef float			julius_real;
+typedef void			gillard_void;
+typedef char			gillard_char;
+typedef int				gillard_intg;
+typedef float			gillard_real;
 
-typedef unsigned char	julius_boln;
-typedef unsigned char	julius_byte;
+typedef unsigned char	gillard_boln;
+typedef unsigned char	gillard_byte;
 
-typedef long			julius_long;
-typedef double			julius_doub;
+typedef long			gillard_long;
+typedef double			gillard_doub;
 
 /*
 ------------------------------------------------------------
@@ -105,11 +105,11 @@ Main functions signatures
 (Code will be updated during next assignments)
 ------------------------------------------------------------
 */
-julius_intg mainReader(julius_intg argc, julius_char** argv);
+gillard_intg mainReader(gillard_intg argc, gillard_char** argv);
 /*
-julius_intg mainScanner(julius_intg argc, julius_char** argv);
-julius_intg mainParser(julius_intg argc, julius_char** argv);
+gillard_intg mainScanner(gillard_intg argc, gillard_char** argv);
+gillard_intg mainParser(gillard_intg argc, gillard_char** argv);
 */
-julius_void printLogo();
+gillard_void printLogo();
 
 #endif

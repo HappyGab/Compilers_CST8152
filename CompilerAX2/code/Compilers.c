@@ -38,7 +38,7 @@
 ************************************************************
 * File name: compilers.c
 * Compiler: MS Visual Studio 2022
-* Course: CST 8152 – Compilers, Lab Section: [011, 012, 013]
+* Course: CST 8152 ï¿½ Compilers, Lab Section: [011, 012, 013]
 * Assignment: A12, A22, A32.
 * Date: Jan 01 2023
 * Professor: Paulo Sousa
@@ -77,9 +77,9 @@
 *************************************************************
 */
 
-julius_intg main(int argc, char** argv) {
-	julius_intg i;
-	julius_char option;
+gillard_intg main(int argc, char** argv) {
+	gillard_intg i;
+	gillard_char option;
 	printLogo();
 	if (DEBUG) {
 		for (i = 0; i < argc; ++i)
@@ -130,7 +130,7 @@ julius_intg main(int argc, char** argv) {
 * Algorithm: -
 *************************************************************
 */
-julius_void printLogo() {
+gillard_void printLogo() {
 	printf("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s",
 		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n",
 		"@@@@                                                               @@@@\n",
