@@ -38,7 +38,7 @@
 ************************************************************
 * File name: Reader.h
 * Compiler: MS Visual Studio 2022
-* Course: CST 8152 – Compilers, Lab Section: [011, 012, 013]
+* Course: CST 8152 ï¿½ Compilers, Lab Section: [011, 012, 013]
 * Assignment: A12.
 * Date: Jan 01 2023
 * Professor: Paulo Sousa
@@ -106,21 +106,21 @@ enum READER_MODE {
 
 /* Offset declaration */
 typedef struct position {
-	julius_intg mark;			/* the offset to the mark position (in chars) */
-	julius_intg read;			/* the offset to the get a char position (in chars) */
-	julius_intg wrte;			/* the offset to the add chars (in chars) */
+	gillard_intg mark;			/* the offset to the mark position (in chars) */
+	gillard_intg read;			/* the offset to the get a char position (in chars) */
+	gillard_intg wrte;			/* the offset to the add chars (in chars) */
 } Position;
 
 /* Buffer structure */
 typedef struct bufferReader {
-	julius_char*	content;			/* pointer to the beginning of character array (character buffer) */
-	julius_intg		size;				/* current dynamic memory size (in bytes) allocated to character buffer */
-	julius_intg		increment;			/* character array increment factor */
-	julius_intg		mode;				/* operational mode indicator */
-	julius_byte		flags;				/* contains character array reallocation flag and end-of-buffer flag */
+	gillard_char*	content;			/* pointer to the beginning of character array (character buffer) */
+	gillard_intg		size;				/* current dynamic memory size (in bytes) allocated to character buffer */
+	gillard_intg		increment;			/* character array increment factor */
+	gillard_intg		mode;				/* operational mode indicator */
+	gillard_byte		flags;				/* contains character array reallocation flag and end-of-buffer flag */
 	Position		position;			/* Offset / position field */
-	julius_intg		histogram[NCHAR];	/* Statistics of chars */
-	julius_intg		numReaderErrors;	/* Number of errors from Reader */
+	gillard_intg		histogram[NCHAR];	/* Statistics of chars */
+	gillard_intg		numReaderErrors;	/* Number of errors from Reader */
 } BufferReader, * ReaderPointer;
 
 /* FUNCTIONS DECLARATION:  .................................. */
