@@ -168,6 +168,7 @@ ReaderPointer readerAddChar(ReaderPointer const readerPointer, gillard_char ch) 
 	/* TO_DO: Add the char */
 	readerPointer->content[readerPointer->position.wrte++] = ch;
 	/* TO_DO: Updates histogram */
+	readerPointer -> histogram[(int)ch]++;
 	return readerPointer;
 }
 
