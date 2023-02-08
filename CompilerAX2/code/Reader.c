@@ -184,6 +184,11 @@ ReaderPointer readerAddChar(ReaderPointer const readerPointer, gillard_char ch) 
 gillard_boln readerClear(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Adjust flags original */
+	if(readerPointer == NULL){
+		return GILLARD_FALSE;
+	}
+	readerPointer -> flags = READER_DEFAULT_FLAG;
+
 	return GILLARD_TRUE;
 }
 
