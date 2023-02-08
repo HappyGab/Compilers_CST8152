@@ -343,6 +343,10 @@ gillard_intg readerLoad(ReaderPointer const readerPointer, FILE* const fileDescr
 	gillard_intg size = 0;
 	gillard_char c;
 	/* TO_DO: Defensive programming */
+
+	if(readerPointer == NULL || fileDescriptor == NULL){
+		return 0;
+	}
 	c = (gillard_char)fgetc(fileDescriptor);
 	while (!feof(fileDescriptor)) {
 		if (!readerAddChar(readerPointer, c)) {
