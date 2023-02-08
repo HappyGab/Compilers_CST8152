@@ -322,6 +322,9 @@ gillard_intg readerPrint(ReaderPointer const readerPointer) {
 		return READER_ERROR;
 	}
 	c = readerGetChar(readerPointer);
+	if(c < 0 || c > 127){
+		return READER_ERROR;
+	}
 	/* TO_DO: Check flag if buffer EOB has achieved */
 	while (cont < readerPointer->position.wrte) {
 		if(readerPointer -> flags == READER_END_FLAG){
