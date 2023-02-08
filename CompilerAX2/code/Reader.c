@@ -432,6 +432,10 @@ gillard_boln readerRetract(ReaderPointer const readerPointer) {
 gillard_boln readerRestore(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Restore positions (read/mark) */
+	if(!readerPointer) return GILLARD_FALSE;
+
+	readerPointer->position.read = readerPointer->position.mark;
+
 	return GILLARD_TRUE;
 }
 
@@ -456,6 +460,10 @@ gillard_char readerGetChar(ReaderPointer const readerPointer) {
 	/* TO_DO: Check condition to read/wrte */
 	/* TO_DO: Set EOB flag */
 	/* TO_DO: Reset EOB flag */
+	if(readerPointer->position.read == readerPointer->position.wrte){
+		
+	}
+
 	return readerPointer->content[readerPointer->position.read++];
 }
 
