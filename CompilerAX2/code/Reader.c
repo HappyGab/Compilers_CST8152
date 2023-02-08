@@ -191,7 +191,7 @@ gillard_boln readerClear(ReaderPointer const readerPointer) {
 	if(readerPointer == NULL){
 		return GILLARD_FALSE;
 	}
-	readerPointer -> flags = READER_DEFAULT_FLAG;
+	readerPointer -> flags = READER_EMPTY_FLAG;
 
 	return GILLARD_TRUE;
 }
@@ -214,7 +214,7 @@ gillard_boln readerFree(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	if (!readerPointer)
 		return GILLARD_FALSE;
-	/* TO_DO: Free pointers */
+	free(readerPointer);
 	return GILLARD_TRUE;
 }
 
@@ -385,6 +385,11 @@ gillard_intg readerLoad(ReaderPointer const readerPointer, FILE* const fileDescr
 gillard_boln readerRecover(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Recover positions */
+	if (!readerPointer) return GILLARD_FALSE;
+	
+	readerPointer->position.read = 0;
+	readerPointer->position.mark = 0;
+
 	return GILLARD_TRUE;
 }
 
