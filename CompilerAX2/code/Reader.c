@@ -320,6 +320,9 @@ gillard_intg readerPrint(ReaderPointer const readerPointer) {
 	c = readerGetChar(readerPointer);
 	/* TO_DO: Check flag if buffer EOB has achieved */
 	while (cont < readerPointer->position.wrte) {
+		if(readerPointer -> flags == READER_END_FLAG){
+			return 0;
+		}
 		cont++;
 		printf("%c", c);
 		c = readerGetChar(readerPointer);
