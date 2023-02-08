@@ -418,7 +418,15 @@ gillard_boln readerRecover(ReaderPointer const readerPointer) {
 gillard_boln readerRetract(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Retract (return 1 pos read) */
-	return GILLARD_TRUE;
+	if(readerPointer == NULL){
+		return GILLARD_FALSE;
+	}
+
+	if(readerPointer -> position.read - 1 >= 0){
+		readerPointer -> position.read --;
+		return GILLARD_TRUE;
+	}
+	return GILLARD_FALSE;
 }
 
 
