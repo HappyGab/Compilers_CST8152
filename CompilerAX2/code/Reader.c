@@ -149,10 +149,14 @@ ReaderPointer readerAddChar(ReaderPointer const readerPointer, gillard_char ch) 
 		case MODE_ADDIT:
 			/* TO_DO: Adjust new size */
 			/* TO_DO: Defensive programming */
+			if(!readerPointer->size) readerPointer->size = READER_DEFAULT_SIZE; 
+			newSize = readerPointer->size + readerPointer->increment;
 			break;
 		case MODE_MULTI:
 			/* TO_DO: Adjust new size */
 			/* TO_DO: Defensive programming */
+			if(!readerPointer->size) readerPointer->size = READER_DEFAULT_SIZE; 
+			newSize = readerPointer->size * readerPointer->increment;
 			break;
 		default:
 			return NULL;
