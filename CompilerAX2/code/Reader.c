@@ -193,6 +193,7 @@ gillard_boln readerClear(ReaderPointer const readerPointer) {
 	}
 	readerPointer -> flags = READER_EMPTY_FLAG;
 
+
 	return GILLARD_TRUE;
 }
 
@@ -317,6 +318,9 @@ gillard_intg readerPrint(ReaderPointer const readerPointer) {
 	gillard_intg cont = 0;
 	gillard_char c;
 	/* TO_DO: Defensive programming (including invalid chars) */
+	if(readerPointer == NULL){
+		return READER_ERROR;
+	}
 	c = readerGetChar(readerPointer);
 	/* TO_DO: Check flag if buffer EOB has achieved */
 	while (cont < readerPointer->position.wrte) {
@@ -352,7 +356,7 @@ gillard_intg readerLoad(ReaderPointer const readerPointer, FILE* const fileDescr
 	/* TO_DO: Defensive programming */
 
 	if(readerPointer == NULL || fileDescriptor == NULL){
-		return 0;
+		return READER_ERROR;
 	}
 	c = (gillard_char)fgetc(fileDescriptor);
 	while (!feof(fileDescriptor)) {
@@ -501,7 +505,7 @@ gillard_intg readerGetPosRead(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return read */
 	if(readerPointer == NULL){
-		return 0;
+		return READER_ERROR;
 	}
 	
 	return readerPointer->position.read;
@@ -526,7 +530,7 @@ gillard_intg readerGetPosWrte(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return wrte */
 	if(readerPointer == NULL){
-		return 0;
+		return READER_ERROR;
 	}
 	
 	return readerPointer->position.wrte;
@@ -551,7 +555,7 @@ gillard_intg readerGetPosMark(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return mark */
 	if(readerPointer == NULL){
-		return 0;
+		return READER_ERROR;
 	}
 	
 	return readerPointer->position.mark;
@@ -576,7 +580,7 @@ gillard_intg readerGetSize(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return size */
 	if(readerPointer == NULL){
-		return 0;
+		return READER_ERROR;
 	}
 	
 	return readerPointer->size;
@@ -600,7 +604,7 @@ gillard_intg readerGetInc(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return increment */
 	if(readerPointer == NULL){
-		return 0;
+		return READER_ERROR;
 	}
 	
 	return readerPointer->increment;
@@ -625,7 +629,7 @@ gillard_intg readerGetMode(ReaderPointer const readerPointer) {
 	/* TO_DO: Defensive programming */
 	/* TO_DO: Return mode */
 	if(readerPointer == NULL){
-		return 0;
+		return READER_ERROR;
 	}
 	
 	return readerPointer->mode;
@@ -652,7 +656,7 @@ gillard_byte readerGetFlags(ReaderPointer const readerPointer) {
 	/* TO_DO: Return flags */
 
 	if(readerPointer == NULL){
-		return 0;
+		return READER_ERROR;
 	}
 	
 	return readerPointer->flags;
